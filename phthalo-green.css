@@ -1,0 +1,103 @@
+/* ==UserStyle==
+@name           Phthalo Green CRT
+@namespace      github.com/openstyles/stylus
+@version        2.0.0
+@description    Deep organic phosphor optimized for LCD backlighting
+@author         Me
+==/UserStyle== */
+
+@-moz-document regexp(".*") {
+/* Base layer - deep phthalo */
+    body, html {
+        background-color: #000000 !important;
+        color: #3a7a4d !important;
+    }
+    
+    /* Kill backgrounds on everything except exempted elements */
+    *:not(video):not(img):not(canvas):not(svg):not([id*="player"]):not([class*="player"]):not([id*="video"]):not([class*="video"]) {
+        background-color: #000000 !important;
+    }
+    
+    /* Restore specific functional backgrounds - darker phthalo */
+    button, input[type="button"], input[type="submit"] {
+        background-color: #0a1a0f !important;
+    }
+    
+    /* Text with organic phosphor glow */
+    p, span, li, td, th, label, a {
+        color: #3a7a4d !important;
+        text-shadow: 
+            0 0 1px rgba(58, 122, 77, 0.8),
+            0 0 3px rgba(31, 77, 77, 0.4) !important;
+    }
+    
+    /* Headers get stronger presence */
+    h1, h2, h3, h4, h5, h6 {
+        color: #4a9a5d !important;
+        text-shadow: 
+            0 0 2px rgba(74, 154, 93, 0.9),
+            0 0 4px rgba(58, 122, 77, 0.5),
+            0 0 6px rgba(31, 77, 77, 0.3) !important;
+    }
+    
+    /* UI elements - earthy green with teal undertone */
+    button, input, select, textarea {
+        color: #3a7a4d !important;
+        border: 1px solid #2d5f3f !important;
+        border-radius: 8px !important;
+        box-shadow: 
+            0 0 3px rgba(58, 122, 77, 0.4),
+            0 0 6px rgba(31, 77, 77, 0.25) !important;
+    }
+    
+    /* Radio buttons and checkboxes */
+    input[type="radio"], input[type="checkbox"] {
+        accent-color: #3a7a4d !important;
+    }
+    
+    /* Selection and focus states - slightly lighter phthalo */
+    *:focus, *:active, *:checked {
+        background-color: #0f2617 !important;
+        outline-color: #3a7a4d !important;
+    }
+    
+    /* Hover states - subtle lift */
+    li:hover, button:hover, a:hover,
+    div:hover:not([id*="player"]):not([class*="player"]):not([id*="video"]):not([class*="video"]) {
+        background-color: #0f2617 !important;
+    }
+    
+    /* Selected/highlighted items - mid phthalo */
+    [aria-selected="true"],
+    [data-selected="true"],
+    .selected, .active, .highlighted,
+    [class*="selected"],
+    [class*="active"]:not(button):not(a) {
+        background-color: #1a4d2e !important;
+        box-shadow: 0 0 5px rgba(58, 122, 77, 0.5) !important;
+    }
+    
+    /* Soft edges */
+    article, section, button, input, form {
+        border-radius: 6px !important;
+    }
+    
+    /* Media - warm organic glow */
+    img, canvas {
+        border-radius: 4px !important;
+        filter: none !important;
+        opacity: 1 !important;
+        box-shadow: 
+            0 0 2px rgba(58, 122, 77, 0.3),
+            0 0 5px rgba(31, 77, 77, 0.2) !important;
+    }
+    
+    video {
+        border-radius: 4px !important;
+    }
+    
+    svg {
+        filter: 
+            drop-shadow(0 0 1px rgba(58, 122, 77, 0.6))
+            drop-shadow(0 0 2px rgba(31, 77, 77, 0.35)) !important;
+    }
